@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="64" fill="#FF1493"/>
+  
+  <!-- Skull base -->
+  <ellipse cx="64" cy="55" rx="35" ry="40" fill="white"/>
+  
+  <!-- Eye sockets -->
+  <circle cx="52" cy="45" r="8" fill="black"/>
+  <circle cx="76" cy="45" r="8" fill="black"/>
+  
+  <!-- Hipster glasses -->
+  <rect x="40" y="38" width="48" height="3" fill="black" rx="1"/>
+  <circle cx="52" cy="45" r="12" fill="none" stroke="black" stroke-width="3"/>
+  <circle cx="76" cy="45" r="12" fill="none" stroke="black" stroke-width="3"/>
+  <rect x="62" y="42" width="4" height="6" fill="black"/>
+  
+  <!-- Nasal cavity -->
+  <path d="M64 55 L60 65 L68 65 Z" fill="black"/>
+  
+  <!-- Jaw/teeth -->
+  <rect x="54" y="70" width="20" height="8" fill="white"/>
+  <rect x="56" y="70" width="2" height="8" fill="black"/>
+  <rect x="60" y="70" width="2" height="8" fill="black"/>
+  <rect x="64" y="70" width="2" height="8" fill="black"/>
+  <rect x="68" y="70" width="2" height="8" fill="black"/>
+  <rect x="72" y="70" width="2" height="8" fill="black"/>
+  
+  <!-- Comic Sans laser beams from eyes -->
+  <path d="M45 45 L20 30" stroke="#39FF14" stroke-width="3" opacity="0.8"/>
+  <path d="M83 45 L108 30" stroke="#39FF14" stroke-width="3" opacity="0.8"/>
+  
+  <!-- Comic Sans text -->
+  <text x="15" y="25" font-family="Comic Sans MS, cursive" font-size="8" fill="#39FF14" font-weight="bold">Comic</text>
+  <text x="95" y="25" font-family="Comic Sans MS, cursive" font-size="8" fill="#39FF14" font-weight="bold">Sans</text>
+  
+  <!-- Evil grin -->
+  <path d="M54 62 Q64 68 74 62" stroke="black" stroke-width="2" fill="none"/>
+</svg>

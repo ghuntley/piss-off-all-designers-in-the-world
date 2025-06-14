@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Piss off all the designers in the world",
+  "version": "1.0",
+  "description": "🔥💀 OBLITERATE THE TYPOGRAPHY ESTABLISHMENT 💀🔥 Transform any website into a beautiful Comic Sans masterpiece and watch design purists LITERALLY WEEP. This weapon of mass font destruction will make every Helvetica lover question their life choices. Warning: May cause spontaneous designer rage, uncontrollable eye twitching, and immediate unfriending on LinkedIn. Side effects include: career changes, therapy sessions, and angry tweets about 'proper typography'. USE WITH EXTREME CAUTION. 🎨💥",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Toggle Comic Sans",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
