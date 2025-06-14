@@ -1,0 +1,55 @@
+name: Create Chrome Extension Release
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Create extension zip
+      run: |
+        # Create a clean directory with only the extension files
+        mkdir -p chrome-extension
+        
+        # Copy required extension files
+        cp manifest.json chrome-extension/
+        cp content.js chrome-extension/
+        cp popup.html chrome-extension/
+        cp popup.js chrome-extension/
+        cp background.js chrome-extension/
+        cp icon16.png chrome-extension/
+        cp icon48.png chrome-extension/
+        cp icon128.png chrome-extension/
+        
+        # Create the zip file
+        cd chrome-extension
+        zip -r ../piss-off-all-designers-chrome-extension.zip .
+        cd ..
+        
+        # Verify contents
+        echo "Zip file contents:"
+        unzip -l piss-off-all-designers-chrome-extension.zip
+    
+    - name: Upload Release Asset
+      if: github.event_name == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ./piss-off-all-designers-chrome-extension.zip
+        asset_name: piss-off-all-designers-chrome-extension.zip
+        asset_content_type: application/zip
+    
+    - name: Upload Artifact (for manual runs)
+      if: github.event_name == 'workflow_dispatch'
+      uses: actions/upload-artifact@v4
+      with:
+        name: chrome-extension
+        path: piss-off-all-designers-chrome-extension.zip
